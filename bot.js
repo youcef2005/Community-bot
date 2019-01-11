@@ -26,6 +26,26 @@ client.on('ready', () => {
 client.user.setStatus("dnd")
 });
 
+client.on('message' , message => {
+        if (message.author.bot) return;
+        if (message.content.startsWith(prefix + "sug")) {
+        if (!message.channel.guild) return;
+        let args = message.content.split(" ").slice(1).join(" ");
+        client.channels.get("533321312022691841").send(
+            "\n" + "**" + " ● Suggested By : " + "**" +
+            "\n" + "**" + "» " + message.author.tag + "**" +
+            "\n" + "**" + " ● Suggest : " + "**" +
+            "\n" + "**" + args + "**")
+        
+        let embed = new Discord.RichEmbed()
+             .setAuthor(message.author.username, message.author.avatarURL)
+             .setDescription(' Suggested Sent')
+             .setThumbnail(message.author.avatarURL)
+             .setFooter("Adidas")
+        message.channel.send(embed);
+}
+ });
+
 
 
 client.login(process.env.BOT_TOKEN);
