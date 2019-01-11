@@ -18,6 +18,7 @@ client.on('message' , message => {
         if (!message.channel.guild) return;
 
         let args = message.content.split(" ").slice(1).join(" ");
+        if (!args) return;
         client.channels.get("533321312022691841").send(
             "\n" + "**" + " ● Suggested By : " + "**" +
             "\n" + "**" + "» " + message.author.tag + "**" +
