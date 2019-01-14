@@ -12,24 +12,7 @@ client.on('ready', () => {
 client.user.setStatus("dnd")
 });
 
-client.on('message' , message => {
-        if (message.author.bot) return;
-        if (message.content.startsWith(prefix + "sug")) {
-        if (!
-            .guild) return;
 
-        let args = message.content.split(" ").slice(1).join(" ");
-        if (!args) return;
-        client.channels.get("533321312022691841").send(
-            "\n" + "**" + " ● Suggested By : " + "**" +
-            "\n" + "**" + "» " + message.author.tag + "**" +
-            "\n" + "**" + " ● Suggest : " + "**" +
-            "\n" + "**" + args + "**")
-        
-
-        message.channel.send("**تم ارسال اقتراحك شكرا**");
-}
- });
 
 client.on("message", message => {
             var args = message.content.substring(prefix.length).split(" ");
