@@ -72,8 +72,10 @@ client.on('message', message => {
   let args = message.content.split(" ").slice(1);
 
 
-  if (command === "say") { /// اكتب البرفيكس ثم الامر
+  if (command === "say") {
+  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
           message.delete()
+
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
 
