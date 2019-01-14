@@ -80,16 +80,4 @@ client.on('message', message => {
 
 });
 
-client.on('message', message => {
-     var prefix = "#";
-              if (!message.channel.guild) return;
-     if(message.content.startsWith(prefix + 'count')) {
-      var GK = new Discord.RichEmbed()
-      .setThumbnail(message.author.avatarURL)
-      .setFooter(message.author.username, message.author.avatarURL)
-      .setTitle('🌍| Members info')
-      .addBlankField(true)
-      .addField('Mmeber Count',`${message.guild.memberCount}`)
-      message.channel.send(GK);
-    });
 client.login(process.env.BOT_TOKEN);
