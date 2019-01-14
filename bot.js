@@ -157,20 +157,19 @@ if(!message.channel.guild) return message.reply(' ');
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 **[ ${message.guild.name} :arrow_down: ] Submite⬇**
 
-[**اسم المقدم**]: 
+[**عنوان المود**]: 
 ${thisMessage}
 
-[**عمره**]: 
+[**وصف المود**]: 
 ${boi}
 
-[**من بلد**]: 
+[**سعر المود**]: 
 ${boi2}
 
-[**تم التقديم بواسطة**]: 
+[**تم الارسال بواسطة**]: 
 ${message.author}
 
-[**ايدي المقدم**]: 
-${message.author.id}`);
+`);
 
         }
 
@@ -180,7 +179,6 @@ ${message.author.id}`);
 
 });
 
-    });
 
   }
 
