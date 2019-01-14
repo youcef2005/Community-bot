@@ -178,8 +178,8 @@ ${message.author}
   );
 
 });
-
-
+    });
+   
   }
 
     );
@@ -190,5 +190,6 @@ ${message.author}
 
 );
 
-    })}});
+    
+});
 client.login(process.env.BOT_TOKEN);
