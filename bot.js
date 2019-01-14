@@ -1,12 +1,12 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "#";
+var prefix = "-";
 
 client.on('ready', () => {
    console.log(`----------------`);
-      console.log(`Desert Bot- Script By : i1Suhaib`);
+      console.log(`LeopardBot- Script By : DirecT`);
         console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : i1Suhaib ' `);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : DirecT ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setStatus("dnd")
@@ -15,7 +15,8 @@ client.user.setStatus("dnd")
 client.on('message' , message => {
         if (message.author.bot) return;
         if (message.content.startsWith(prefix + "sug")) {
-        if (!message.channel.guild) return;
+        if (!
+            .guild) return;
 
         let args = message.content.split(" ").slice(1).join(" ");
         if (!args) return;
@@ -87,25 +88,20 @@ client.on('message', message => {
 
   let args = message.content.split(" ").slice(1);
 
-// -say
-  if (command === "say") {
+
+  if (command === "-say") { /// اكتب البرفيكس ثم الامر
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
-  
- 
 
-if (command == "embed") {
-    let say = new Discord.RichEmbed()
-  .setThumbnail(message.author.avatarURL)  
-  .setAuthor(message.author.username)
-    .setDescription(args.join("  "))
-    .setColor(0x06DF00)
-    message.channel.sendEmbed(say);
-    message.delete();
-  }
-  
 
+});
+
+client.on("message", message => {
+
+            if (message.content.startsWith(prefix + "-بيع")) {
+           let args = message.content.split(" ").slice(1).join(" ");
+          if (!args) return; message.channel.send("**اكتب عنوان المود**");
 
 });
 
