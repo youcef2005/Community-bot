@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "-";
+var prefix = "#";
 
 client.on('ready', () => {
    console.log(`----------------`);
@@ -89,7 +89,7 @@ client.on('message', message => {
   let args = message.content.split(" ").slice(1);
 
 
-  if (command === "-say") { /// اكتب البرفيكس ثم الامر
+  if (command === "say") { /// اكتب البرفيكس ثم الامر
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
@@ -97,12 +97,16 @@ client.on('message', message => {
 
 });
 
-client.on("message", message => {
-
-            if (message.content.startsWith(prefix + "-بيع")) {
-           let args = message.content.split(" ").slice(1).join(" ");
-          if (!args) return; message.channel.send("**اكتب عنوان المود**");
-
-});
-
+client.on('message', message => {
+     var prefix = "#";
+              if (!message.channel.guild) return;
+     if(message.content.startsWith(prefix + 'count')) {
+      var GK = new Discord.RichEmbed()
+      .setThumbnail(message.author.avatarURL)
+      .setFooter(message.author.username, message.author.avatarURL)
+      .setTitle('🌍| Members info')
+      .addBlankField(true)
+      .addField('Mmeber Count',`${message.guild.memberCount}`)
+      message.channel.send(GK);
+    });
 client.login(process.env.BOT_TOKEN);
